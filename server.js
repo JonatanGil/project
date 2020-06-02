@@ -5,6 +5,8 @@ const handlebars = require('express-handlebars');
 const mongoose   = require('mongoose');
 const app        = express();
 
+const PORT = process.env.PORT || 5000;
+
 (async function initApp() {
     
     // To transfer data with client, this way client can send a whole form
@@ -19,8 +21,7 @@ const app        = express();
     app.use(express.static(path.join(__dirname, 'public')));
     
     app.use('/', require('./app/routes/index.routes.js'));
-    app.listen(process.env.PORT || 5000, () => console.log('App ready!'));
-    console.log("server.js finish");
+    const PORT = process.env.PORT || 8000; app.listen(PORT, () => { console.log(`App listening on port ${PORT}!`); });
 })();
 
 function initCookies() {
