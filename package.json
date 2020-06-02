@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "build":  "webpack"
+    "build": "node server.js"
     
   },
   "keywords": [],

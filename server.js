@@ -20,6 +20,7 @@ const app        = express();
     
     app.use('/', require('./app/routes/index.routes.js'));
     app.listen(process.env.PORT || 5000, () => console.log('App ready!'));
+    console.log("server.js finish");
 })();
 
 function initCookies() {
