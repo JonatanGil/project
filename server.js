@@ -27,10 +27,6 @@ function initCookies() {
 }
 
 async function initDb() {
-    
-
-    
-
     try {
         const { url }       = require('./config/db');    
         const DB_PROPERTIES = { useNewUrlParser: true, useUnifiedTopology: true };
