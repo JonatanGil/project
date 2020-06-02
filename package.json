@@ -1,18 +1,6 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "Cinema Project",
-  "main": "server.js",
-  "engines": {
-    "node": "12.14.X"
-  },
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@coreui/coreui": "^3.2.0",
     "bcrypt": "^4.0.1",
@@ -25,5 +13,18 @@
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "description": "Cinema Project",
+  "main": "server.js",
+  "engines": {
+    "node": "12.14.X"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "node server.js",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
