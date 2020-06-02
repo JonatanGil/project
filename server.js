@@ -19,7 +19,7 @@ const app        = express();
     app.use(express.static(path.join(__dirname, 'public')));
     
     app.use('/', require('./app/routes/index.routes.js'));
-    //app.listen(process.env.PORT || 3000, () => console.log('App ready!'));
+    app.listen(process.env.PORT || 5000, () => console.log('App ready!'));
 })();
 
 function initCookies() {
