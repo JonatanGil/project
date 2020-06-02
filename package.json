@@ -7,7 +7,7 @@
     "node": "12.16.x"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
