@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost:27017/express-session'
+    url: 'mongodb://37.14.243.179/express-session'
 }
