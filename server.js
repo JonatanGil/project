@@ -27,9 +27,14 @@ function initCookies() {
 }
 
 async function initDb() {
+    
+
+    
+
     try {
         const { url }       = require('./config/db');    
         const DB_PROPERTIES = { useNewUrlParser: true, useUnifiedTopology: true };
+        await mongoose.set('useCreateIndex', true);
         await mongoose.connect(url, DB_PROPERTIES);
         console.log('Db started!');
     }
