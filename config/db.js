@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://37.14.243.179/express-session'
+    url: 'mongodb+srv://admin:admin@cluster0-fwqr1.mongodb.net/test?retryWrites=true&w=majority'
 }
