@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headAttributes}}
+  <link href="/css/home.css" rel="stylesheet">
+</head>
+
+<body class="c-app">
+  <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+
+    <div class="c-sidebar-brand d-md-down-none">
+      <a class="c-sidebar-brand-minimized" href="/">
+        <img style="color: black" src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024"
+          alt="Logo" width="60" height="50">
+      </a>
+
+      <a class="c-sidebar-brand-full p-1" href="/">
+        <img class="p-1" src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024" alt="Logo"
+          width="60" height="50">
+      </a>
+    </div>
+
+    <ul class="c-sidebar-nav">
+      <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link c-active" href="/">
+          <svg class="c-sidebar-nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-people"></use>
+          </svg> HomePage</a></li>
+      <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/home">
+          <svg class="c-sidebar-nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-color-border"></use>
+          </svg>TopList</a></li>
+      <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link c-active" href="/">
+          <svg class="c-sidebar-nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-people"></use>
+          </svg>Game</a></li>
+      <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link c-active" href="/">
+          <svg class="c-sidebar-nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-people"></use>
+          </svg>Api</a></li>
+    </ul>
+    <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
+      data-class="c-sidebar-minimized"></button>
+  </div>
+  <div class="c-sidebar c-sidebar-lg c-sidebar-light c-sidebar-right c-sidebar-overlaid" id="aside">
+    <button class="c-sidebar-close c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-show"
+      responsive="true">
+      <svg class="c-icon">
+        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-x"></use>
+      </svg>
+    </button>
+    <ul class="nav nav-tabs nav-underline nav-underline-primary" role="tablist">
+      <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+          <svg class="c-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list"></use>
+          </svg></a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+          <svg class="c-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speech"></use>
+          </svg></a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+          <svg class="c-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+          </svg></a></li>
+    </ul>
+
+  </div>
+  <div class="c-wrapper">
+    <header class="c-header c-header-light c-header-fixed">
+      <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
+        data-class="c-sidebar-show">
+        <svg class="c-icon c-icon-lg">
+          <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+        </svg>
+      </button><a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
+        <img class="p-1" src="https://cdn140.picsart.com/265061549011212.png?type=webp&amp;to=min&amp;r=1024" alt="Logo"
+          width="60" height="50"></a>
+      <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
+        data-class="c-sidebar-lg-show" responsive="true">
+        <svg class="c-icon c-icon-lg">
+          <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+        </svg>
+      </button>
+      <ul class="c-header-nav d-md-down-none">
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Homepage</a></li>
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">TopList</a></li>
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Game</a></li>
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Api</a></li>
+      </ul>
+      <ul class="c-header-nav mfs-auto">
+        <li class="c-header-nav-item px-3 c-d-legacy-none">
+          <button class="c-class-toggler c-header-nav-btn" type="button" id="header-tooltip" data-target="body"
+            data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title=""
+            data-original-title="Toggle Light/Dark Mode">
+            <svg class="c-icon c-d-dark-none">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+            </svg>
+            <svg class="c-icon c-d-default-none">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <ul class="c-header-nav">
+        <li class="c-header-nav-item dropdown mr-3"><a class="c-header-nav-link" data-toggle="dropdown" href="#"
+            role="button" aria-haspopup="true" aria-expanded="false">
+            {{user.name}}-<div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right pt-0">
+            <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
+            <a class="dropdown-item" href="#">
+              <svg class="c-icon mfe-2">
+                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+              </svg> Profile</a>
+            <a class="dropdown-item" href="#">
+              <svg class="c-icon mfe-2">
+                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+              </svg> Settings</a>
+            <a class="dropdown-item" href="/logout">
+              <svg class="c-icon mfe-2">
+                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+              </svg> Logout</a>
+          </div>
+        </li>
+      </ul>
+
+    </header>
+
+    <div class="c-body p-2">
+
+      <div class="row m-0">
+        {{#each movies}}
+        <div class="col-12 col-lg-4 pr-1 pl-1">
+          <div class="card">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="MoviePoster">
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              <p class="card-text"></p>
+              <a style="cursor: pointer;">Details</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+
+      <footer class="c-footer">
+        {{!-- footer aqui --}}
+        FOOTER
+      </footer>
+
+    </div>
+
+    <!-- CoreUI and necessary plugins-->
+    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+
+</body>
+
+</html>
