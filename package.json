@@ -15,15 +15,14 @@
     "nodemon": "^2.0.4"
   },
   "description": "Cinema Project",
+  "heroku-run-build-script": true,
   "main": "server.js",
   "engines": {
     "node": "12.14.X"
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-    "build": "node server.js"
-    
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
