@@ -1,5 +1,5 @@
 const usersModel = require('../models/users.model');
-const fetch = require("node-fetch");
+const apiMovies  = require('./movies.controller');
 
 module.exports = {
     home,
@@ -7,27 +7,8 @@ module.exports = {
 }
 
 async function home(req, res) {
-    console.log("Home inicio de sesion ok");
-
-    let movies = await getMovies();
-    console.log(movies[0]);
-
+    console.log("Home login OK");
+    let movies = await apiMovies.getMovies();
     const { user } = req.cookies;
     res.render('home', { user, movies });
-}
-
-//TODO
-//https://developers.themoviedb.org/3/genres/get-movie-list
-
-async function getMovies() {
-    let movies = null;
-    await fetch('https://api.themoviedb.org/3/search/movie?api_key=46abaa78d32cf1e540336f2225aeec23&language=es&query=A&page=1&include_adult=true')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (myJson) {
-            //results solo devuelve las peliculas- page total-pages no
-            movies = myJson.results;
-        });
-        return movies;
 }

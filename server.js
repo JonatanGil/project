@@ -21,7 +21,8 @@ const PORT = process.env.PORT || 5000;
     app.use(express.static(path.join(__dirname, 'public')));
     
     app.use('/', require('./app/routes/index.routes.js'));
-    const PORT = process.env.PORT || 8000; app.listen(PORT, () => { console.log(`App listening on port ${PORT}!`); });
+    
+    const PORT = process.env.PORT || 3000; app.listen(PORT, () => { console.log(`App listening on port ${PORT}!`); });
 })();
 
 function initCookies() {
