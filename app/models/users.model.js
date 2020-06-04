@@ -16,6 +16,16 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true,
         lowercase: true
+    },
+    image: {
+        type: String,
+        required: false,
+        unique: false
+    },
+    comment: {
+        type: Number,
+        required: false,
+        unique: false,
     }
 }, {
     timestamps: true

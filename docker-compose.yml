@@ -1,0 +1,14 @@
+version: '3.0'
+services:
+
+    nodejs:
+        image: keymetrics/pm2:10-alpine
+        ports:
+            - 3000:3000
+        volumes:
+            - ../project:/usr/src/app  
+            - /usr/src/app/node_modules
+        working_dir: /usr/src/app
+        command: "npm start"
+        environment:
+            - MODE=prod

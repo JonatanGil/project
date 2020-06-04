@@ -1,0 +1,13 @@
+{
+  "name": "Andronautic Scrapper",
+  "script": "server.js",
+  "instances": "1",
+  "out_file"    : "./log/andronauticScraper.log",
+  "log_date_format" : "MM/DD/YYYY HH:mm:ss",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "env_production" : {
+    "NODE_ENV": "production"
+  }
+}

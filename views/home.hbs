@@ -7,17 +7,15 @@
 </head>
 
 <body class="c-app">
-  <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+  <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show c-sidebar-minimized" id="sidebar">
 
-    <div class="c-sidebar-brand d-md-down-none">
+    <div class="c-sidebar-brand">
       <a class="c-sidebar-brand-minimized" href="/">
-        <img style="color: black" src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024"
-          alt="Logo" width="60" height="50">
+        <img class="imgLogo" src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024" alt="Logo">
       </a>
 
-      <a class="c-sidebar-brand-full p-1" href="/">
-        <img class="p-1" src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024" alt="Logo"
-          width="60" height="50">
+      <a class="c-sidebar-brand-full" href="/">
+        <img src="https://cdn140.picsart.com/265061549011212.png?type=webp&to=min&r=1024" alt="Logo" class="imgLogo">
       </a>
     </div>
 
@@ -73,8 +71,8 @@
           <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
         </svg>
       </button><a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
-        <img class="p-1" src="https://cdn140.picsart.com/265061549011212.png?type=webp&amp;to=min&amp;r=1024" alt="Logo"
-          width="60" height="50"></a>
+        <img class="imgLogo" src="https://cdn140.picsart.com/265061549011212.png?type=webp&amp;to=min&amp;r=1024"
+          alt="Logo"></a>
       <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
         data-class="c-sidebar-lg-show" responsive="true">
         <svg class="c-icon c-icon-lg">
@@ -128,18 +126,16 @@
 
     <div class="c-body p-2">
 
-      <div class="row m-0">
+      <div id="MovieGrid">
         {{#each movies}}
-        <div class="col-12 col-lg-2 pr-1 pl-1">
           <div class="card">
-            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="MoviePoster">
-            <div class="card-body">
+            <img class="card-img-top p-3" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="MoviePoster">
+            <div class="card-body text-center">
               <h5 class="card-title">{{title}}</h5>
               <p class="card-text"></p>
-              <a style="cursor: pointer;">Details</a>
+              <a class="DetailMovie detail" name="" style="cursor: pointer;">Details</a>
             </div>
           </div>
-        </div>
         {{/each}}
       </div>
 
