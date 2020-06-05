@@ -6,7 +6,7 @@
     {{> headAttributesLogin}}
 
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    <script  src="js/loginBtn.js"></script>
+    <script src="js/loginBtn.js"></script>
 
 </head>
 
@@ -16,7 +16,8 @@
 
             <div class="tab-content" id="pills-tabContent" style="align-self: center;">
 
-                <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                <div class="tab-pane fade active show" id="pills-login" role="tabpanel"
+                    aria-labelledby="pills-login-tab">
                     <div class="card" style="height:420px;">
                         <div class="card-header">
                             <h3>Sign In</h3>
@@ -46,9 +47,9 @@
                                 <p class="msgError" style="color: red">{{msg}}</p>
                                 {{/if}}
 
-                                <div class="row align-items-center remember">
+                                {{!-- <div class="row align-items-center remember">
                                     <input type="checkbox">Remember Me
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <input type="submit" value="Login" class="btn float-right login_btn">
                                 </div>
@@ -60,8 +61,9 @@
                                 Don't have an account?
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link bg-transparent" id="btnRegister" data-toggle="pill" href="#pills-register" role="tab"
-                                            aria-controls="pills-register" aria-selected="false">Register</a>
+                                        <a class="nav-link bg-transparent" id="btnRegister" data-toggle="pill"
+                                            href="#pills-register" role="tab" aria-controls="pills-register"
+                                            aria-selected="false">Register</a>
                                     </li>
                                 </ul>
 
@@ -109,11 +111,12 @@
                                 <p class="msgError" style="color: red">{{msg}}</p>
                                 {{/if}}
 
-                                <div class="row align-items-center remember">
+                                {{!-- <div class="row align-items-center remember">
                                     <input type="checkbox">Remember Me
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
-                                    <input id="RegisterOK" type="submit" value="Register" class="btn float-right login_btn">
+                                    <input id="RegisterOK" type="submit" value="Register"
+                                        class="btn float-right login_btn">
                                 </div>
                                 <input type="text" name="loginRegister" value="Register" hidden>
                             </form>
@@ -123,8 +126,9 @@
                                 You have an account?
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link bg-transparent" id="btnLogin" data-toggle="pill" href="#pills-login"
-                                            role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+                                        <a class="nav-link bg-transparent" id="btnLogin" data-toggle="pill"
+                                            href="#pills-login" role="tab" aria-controls="pills-login"
+                                            aria-selected="true">Login</a>
                                     </li>
                                 </ul>
                             </div>

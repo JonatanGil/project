@@ -31,7 +31,7 @@ async function signUp(req, res) {
         if (!password) { fieldsEmptys += '-password' }
         if (!email)    { fieldsEmptys += '-email' }
         if (!name || !password || !email) {
-            return res.render('login', { msg: 'The following fields are empty:' + fieldsEmptys });
+            return res.render('register', { msg: 'Empty fields register:' + fieldsEmptys });
         }
 
         console.log("EmailDuplicado length  0==No a encontrado email creaCuenta  1== A encontrado email en mongose no crea " + emailDuplicate.length);
@@ -51,10 +51,10 @@ async function signUp(req, res) {
 
 async function signIn(req, res) {
     const { name, password } = req.body;
-    if (!name || !password) {
-        return res.render('login', { msg: 'Fields are empty' });
-    }
-
+    let fieldsEmptys = 'Empty fields login:';
+    if(!name)     { fieldsEmptys += "-name" }
+    if(!password) { fieldsEmptys += "-password" }
+    if(!name || !password) { return res.render('login', { msg: fieldsEmptys }); }
     let msg = '';
     const user = await usersModel.findOne({ name });
 

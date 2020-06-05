@@ -9,8 +9,9 @@ router.get('/users/', usersCtrl.get);
 
 // router.post('/register', authCtrl.signUp);
 // router.post('/login',    authCtrl.signIn);
-router.post('/login',    authCtrl.signUp);
-router.get( '/logout',   authCtrl.logOut);
+router.post('/login',       authCtrl.signUp);
+router.post('/register',    authCtrl.signUp);
+router.get( '/logout',      authCtrl.logOut);
 
 // If the user is already logged in, it will redirect to home
 // otherwise it will continue to the next routes

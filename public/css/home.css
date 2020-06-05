@@ -5,27 +5,36 @@
     }
 }
 
-@media only screen and (max-width: 1250px)  {
+@media only screen and (max-width: 1500px)  {
     #MovieGrid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 1100px)  {
     #MovieGrid{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media only screen and (max-width: 520px)  {
+@media only screen and (max-width: 560px)  {
     #MovieGrid{
         display: grid;
         grid-template-columns: 1fr;
     }
 }
+.card-img-top{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+#header-tooltip{
+    border: none;
+    background: transparent;
+    outline:none;
 
+}
 #MovieGrid{
   grid-gap: 10px;
 }
