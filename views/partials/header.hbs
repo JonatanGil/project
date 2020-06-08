@@ -1,82 +1,80 @@
 <header class="c-header c-header-light c-header-fixed">
-      <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
-        data-class="c-sidebar-show">
-        <svg class="c-icon c-icon-lg">
-          <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-        </svg>
-      </button><a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
-        <img class="imgLogo" src="https://cdn140.picsart.com/265061549011212.png?type=webp&amp;to=min&amp;r=1024"
-          alt="Logo"></a>
-      <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
-        data-class="c-sidebar-lg-show" responsive="true">
-        <svg class="c-icon c-icon-lg">
-          <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-        </svg>
-      </button>
-      <ul class="c-header-nav d-md-down-none">
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Homepage</a></li>
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">TopList</a></li>
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Game</a></li>
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="#">Api</a></li>
-      </ul>
+  <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
+    data-class="c-sidebar-show">
+    <svg class="c-icon c-icon-lg">
+      <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+    </svg>
+  </button><a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
+    <img class="imgLogo" src="https://cdn140.picsart.com/265061549011212.png?type=webp&amp;to=min&amp;r=1024"
+      alt="Logo"></a>
+  <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
+    data-class="c-sidebar-lg-show" responsive="true">
+    <svg class="c-icon c-icon-lg">
+      <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+    </svg>
+  </button>
+  <ul class="c-header-nav d-md-down-none">
+    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/home">Homepage</a></li>
+    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/topMovies">TopList</a></li>
+    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/game">Game</a></li>
+    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/api">Api</a></li>
+  </ul>
 
-      <ul class="c-header-nav mfs-auto">
-        <div class="tab-content c-d-legacy-none" id="pills-tabContent" style="align-self: center;">
-          <div class="tab-pane fade" id="pills-darkMode" role="tabpanel" aria-labelledby="pills-darkMode-tab">
-            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-              <li class="nav-item"><button class="c-class-toggler bg-transparent" type="button" id="header-tooltip"
-                  data-target="body" data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title=""
-                  data-original-title="Toggle Light/Dark Mode">
+  <ul class="c-header-nav mfs-auto">
+    <div class="tab-content c-d-legacy-none" id="pills-tabContent" style="align-self: center;">
+      <div class="tab-pane fade  active show " id="pills-darkMode" role="tabpanel" aria-labelledby="pills-darkMode-tab">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item"><button class="c-class-toggler bg-transparent" type="button" id="header-tooltip"
+              data-target="body" data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title=""
+              data-original-title="Toggle Light/Dark Mode">
 
-                  <a class="nav-link bg-transparent" id="lightMode" data-toggle="pill" href="#pills-lightMode"
-                    role="tab" aria-controls="pills-lightMode" aria-selected="false"><svg
-                      class="c-icon c-d-default-none">
-                      <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
-                    </svg></a>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-pane fade active show " id="pills-lightMode" role="tabpanel"
-            aria-labelledby="pills-lightMode-tab">
-            <ul class="nav nav-pills mfs-auto" id="pills-tab" role="tablist">
-              <li class="nav-item"><button class="c-class-toggler bg-transparent" type="button"
-                  id="header-tooltip" data-target="body" data-class="c-dark-theme" data-toggle="c-tooltip"
-                  data-placement="bottom" title="" data-original-title="Toggle Light/Dark Mode">
-                  <a class="nav-link bg-transparent moonSunDarkMode" id="darkMode" data-toggle="pill" href="#pills-darkMode"
-                    role="tab" aria-controls="pills-darkMode" aria-selected="true"><svg
-                      class="c-icon c-d-dark-none">
-                      <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
-                    </svg></a>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </ul>
+              <a class="nav-link bg-transparent text-white" id="lightMode" data-toggle="pill" href="#pills-lightMode"
+                role="tab" aria-controls="pills-lightMode" aria-selected="false"><svg class="c-icon c-d-default-none">
+                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+                </svg></a>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="pills-lightMode" role="tabpanel" aria-labelledby="pills-lightMode-tab">
+        <ul class="nav nav-pills mfs-auto" id="pills-tab" role="tablist">
+          <li class="nav-item"><button class="c-class-toggler bg-transparent" type="button" id="header-tooltip"
+              data-target="body" data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title=""
+              data-original-title="Toggle Light/Dark Mode">
+              <a class="nav-link bg-transparent text-dark" id="darkMode" data-toggle="pill" href="#pills-darkMode"
+                role="tab" aria-controls="pills-darkMode" aria-selected="true"><svg class="c-icon c-d-dark-none">
+                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+                </svg></a>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ul>
 
-      </ul>
-      <ul class="c-header-nav">
-        <li class="c-header-nav-item dropdown mr-3"><a class="c-header-nav-link" data-toggle="dropdown" href="#"
-            role="button" aria-haspopup="true" aria-expanded="false">
-            {{user.name}}-<div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right pt-0">
-            <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
-            <a class="dropdown-item" href="#">
-              <svg class="c-icon mfe-2">
-                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-              </svg> Profile</a>
-            <a class="dropdown-item" href="#">
-              <svg class="c-icon mfe-2">
-                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
-              </svg> Settings</a>
-            <a class="dropdown-item" href="/logout">
-              <svg class="c-icon mfe-2">
-                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-              </svg> Logout</a>
-          </div>
-        </li>
-      </ul>
+  </ul>
+  <ul class="c-header-nav">
+    <li class="c-header-nav-item dropdown mr-3"><a class="c-header-nav-link" data-toggle="dropdown" href="#"
+        role="button" aria-haspopup="true" aria-expanded="false">
+        {{user.name}}-<div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right pt-0">
+        <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
+        <a class="dropdown-item" href="#">
+          <svg class="c-icon mfe-2">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+          </svg> Profile</a>
+        <a class="dropdown-item" href="#">
+          <svg class="c-icon mfe-2">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+          </svg> Settings</a>
+        <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
+        <a class="dropdown-item" href="/logout">
+          <svg class="c-icon mfe-2">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+          </svg> Logout</a>
+      </div>
+    </li>
+  </ul>
 
-    </header>
+</header>

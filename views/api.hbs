@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headAttributes}}
+  <link href="/css/home.css" rel="stylesheet">
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+  {{> navSidebar}}
+
+  <div class="c-wrapper">
+
+    {{> header}}
+
+    <div class="c-body p-2">
+
+      <div class="card" style="height: auto;">
+        <img class="m-4"
+          src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg">
+        <div class="card-body">
+          <div class="card-title">Api attributions</div>
+          <div class="card-text  text-center">
+            <h2>Hi there,</h2>
+            <img id="imgApi"
+              src="https://www.themoviedb.org/assets/2/v4/marketing/deadpool-06f2a06d7a418ec887300397b6861383bf1e3b72f604ddd5f75bce170e81dce9.png"
+              >
+
+            <h3 class="display-4"><strong>Hablemos de TMDb</strong></h3>
+            <p style="margin-bottom: 50px;">La base de datos de películas (TMDb) es una base de datos de películas y
+              televisión creada por la comunidad. Cada parte de los datos ha sido agregada por nuestra increíble
+              comunidad que data de 2008. El fuerte enfoque internacional y la amplitud de datos de TMDb son en gran
+              medida inigualables y algo de lo que estamos increíblemente orgullosos. En pocas palabras, vivimos y
+              respiramos comunidad y eso es precisamente lo que nos hace diferentes.</p>
+
+            <h4 class="display-5"><strong>La ventaja de TMDb</strong></h4>
+
+            <div class="content">
+              <div class="row d-flex m-3">
+                <div class="col-2 num">1</div>
+                <div class="col-9">Cada año desde 2008, el número de contribuciones a nuestra base de datos ha aumentado. Con más de 200,000 desarrolladores y compañías que utilizan nuestra plataforma, TMDb se ha convertido en una fuente principal de metadatos.</div>
+              </div>
+
+              <div class="row d-flex justify-items-center align-items-center m-3">
+                <div class="col-2 num">2</div>
+                <div class="col-9">Junto con extensos metadatos para películas, programas de televisión y personas, también ofrecemos una de las mejores selecciones de carteles y fanart de alta resolución. En promedio, se agregan más de 1,000 imágenes cada día.</div>
+              </div>
+
+              <div class="row d-flex justify-items-center align-items-center m-3">
+                <div class="col-2 num">3</div>
+                <div class="col-9">Somos internacionales Si bien admitimos oficialmente 39 idiomas, también tenemos datos regionales extensos. Todos los días TMDb se utiliza en más de 180 países.</div>
+              </div>
+
+              <div class="row d-flex justify-items-center align-items-center m-3">
+                <div class="col-2 num">4</div>
+                <div class="col-9">Nuestra comunidad es insuperable. Entre nuestro personal y los moderadores de la comunidad, siempre estamos aquí para ayudar. Nos apasiona asegurarnos de que su experiencia en TMDb sea increíble.</div>
+              </div>
+
+              <div class="row d-flex justify-items-center align-items-center m-3">
+                <div class="col-2 num">5</div>
+                <div class="col-9">Plataforma de confianza. Cada día, nuestro servicio es utilizado por millones de personas mientras procesamos más de 3 mil millones de solicitudes. Hemos demostrado durante años que este es un servicio confiable y confiable.
+                </div>
+              </div>
+            </div>
+            <div class="row d-flex justify-items-center align-items-center m-3"></div>
+            <a href="https://www.themoviedb.org/" class="btn btn-secondary" target="_blank">Contact TMDb</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CoreUI and necessary plugins-->
+      <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+      <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+
+</body>
+
+</html>

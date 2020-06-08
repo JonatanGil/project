@@ -25,7 +25,12 @@ const userSchema = mongoose.Schema({
     comment: {
         type: Number,
         required: false,
-        unique: false,
+        unique: false
+    },
+    favorites: {
+        type: Array,
+        required: false,
+        unique: true
     }
 }, {
     timestamps: true

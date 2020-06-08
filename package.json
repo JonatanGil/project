@@ -20,7 +20,8 @@
     "node": "12.14.X"
   },
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "start"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> headAttributes}}
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+  {{> navSidebar}}
+
+  <div class="c-wrapper">
+
+    {{> header}}
+
+    <div class="c-body p-2">
+      {{#if movie}}
+        <p>{{movie.title}}</p>
+      {{/if}}
+    </div>
+
+  </div>
+
+  <!-- CoreUI and necessary plugins-->
+  <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+  <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+
+</body>
+
+</html>
