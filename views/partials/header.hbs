@@ -14,13 +14,13 @@
     </svg>
   </button>
   <ul class="c-header-nav d-md-down-none">
-    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/home">Homepage</a></li>
-    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/topMovies">TopList</a></li>
-    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/game">Game</a></li>
-    <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="/api">Api</a></li>
+    <li class="c-header-nav-item px-3" id="homePageActiveNav"><a class="c-header-nav-link" href="/home">Home</a></li>
+    <li class="c-header-nav-item px-3" id="topMoviesActiveNav"><a class="c-header-nav-link" href="/topMovies">Top Movies</a></li>
+    <li class="c-header-nav-item px-3" id="gameActiveNav"><a class="c-header-nav-link" href="/game">Search</a></li>
+    <li class="c-header-nav-item px-3" id="apiActiveNav"><a class="c-header-nav-link" href="/api">Api</a></li>
   </ul>
 
-  <ul class="c-header-nav mfs-auto">
+  <ul class="c-header-nav mfs-auto mr-3">
     <div class="tab-content c-d-legacy-none" id="pills-tabContent" style="align-self: center;">
       <div class="tab-pane fade  active show " id="pills-darkMode" role="tabpanel" aria-labelledby="pills-darkMode-tab">
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -56,11 +56,21 @@
   <ul class="c-header-nav">
     <li class="c-header-nav-item dropdown mr-3"><a class="c-header-nav-link" data-toggle="dropdown" href="#"
         role="button" aria-haspopup="true" aria-expanded="false">
-        {{user.name}}-<div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
+        {{#if user.name}}
+        
+        {{user.name}}
+        <div class="c-avatar">
+          <svg class="c-icon mfe-2">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+          </svg>
+        </div>
+        {{else}}
+        <div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
+        {{/if}}
       </a>
       <div class="dropdown-menu dropdown-menu-right pt-0">
         <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" href="/profile">
           <svg class="c-icon mfe-2">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
           </svg> Profile</a>

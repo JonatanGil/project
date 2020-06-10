@@ -1,35 +1,43 @@
 const express = require('express');
 const router  = express.Router(); 
 
-const usersCtrl      = require('../controllers/users.controller');
-const authCtrl       = require('../controllers/auth.controller');
+const usersCtrl          = require('../controllers/usersViews.controller');
+const authCtrl           = require('../controllers/auth.controller');
+const favoriteCtrl       = require('../controllers/favorite.controller');
+const movieCtrl          = require('../controllers/movies.controller');
+const voteCtrl           = require('../controllers/vote.controller');
 
-// router.get('/register',  authCtrl.register);
-router.get('/login',        authCtrl.login);
-// router.post('/register', authCtrl.signUp);
-router.post('/login',           authCtrl.signUp);
-router.post('/register',        authCtrl.signUp);
-router.get( '/logout',          authCtrl.logOut);
+router.get('/login',                authCtrl.login);
+router.post('/login',               authCtrl.signUp);
+router.post('/register',            authCtrl.signUp);
+router.get( '/logout',              authCtrl.logOut);
 
-router.get('/home',             usersCtrl.homePage);
-router.get('/home/:page',       usersCtrl.homePage);
+router.get('/profile',              authCtrl.isLoggedIn, usersCtrl.profile);
 
-router.get('/topMovies',        usersCtrl.topMovies);
+router.get('/',                     usersCtrl.homePage);
+router.get('/home',                 usersCtrl.homePage);
+router.get('/home/:page',           usersCtrl.homePage);
 
-router.get('/detail',          usersCtrl.detail);
-router.get('/detail/:idMovie', usersCtrl.detail);
+router.get('/topMovies',            usersCtrl.topMovies);
+
+router.get('/detail',               usersCtrl.detail);
+router.get('/detail/:idMovie',      usersCtrl.detail);
+
+router.post('/view/:idMovie',                   authCtrl.isLoggedIn, favoriteCtrl.addFavorite);
+router.post('/view/favorites/:idMovie',         authCtrl.isLoggedIn, favoriteCtrl.addFavorite);
+router.post('/view/viewedMovie/:idMovie',       authCtrl.isLoggedIn, movieCtrl.viewedMovie);
+router.post('/view/movieScore/:idMovie/:score', authCtrl.isLoggedIn, voteCtrl.vote);
+
+
+router.get('/api',                              authCtrl.isLoggedIn, usersCtrl.api);
+
 
 // router.get('/game',             authCtrl.isLoggedIn, usersCtrl.game);
-
-router.get('/api',              authCtrl.isLoggedIn, usersCtrl.api);
-
-
 
 // If the user is already logged in, it will redirect to home
 // otherwise it will continue to the next routes
 router.use((req, res, next) => {
     if (req.cookies.user) {
-        console.log("cokkie down");
         return res.redirect('/home');
     }
     next();

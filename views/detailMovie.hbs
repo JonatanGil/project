@@ -3,6 +3,8 @@
 
 <head>
   {{> headAttributes}}
+  <link href="/css/detailMovie.css" rel="stylesheet">
+  <script defer src="/js/detailMovie.js"></script>
 
 </head>
 
@@ -14,9 +16,77 @@
 
     {{> header}}
 
-    <div class="c-body p-2">
+    <div class="c-body p-3">
       {{#if movie}}
-        <p>{{movie.title}}</p>
+      <div class="card p-0 m-0">
+        <div class="card-body text-center m-0 pt-2 p-0">
+          <h3 class="card-title mb-4 p-4">{{movie.title}}</h3>
+
+          <div id="gridDetailMovie">
+            <figure>
+              <img src="{{#if movie.poster_path}}https://image.tmdb.org/t/p/w500{{movie.poster_path}}
+               {{else}}https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=500{{/if}}" alt="MoviePoster"
+                id="MoviePoster">
+              <figcaption>
+                {{#if user}}
+                <div id="gridDetailSettings">
+                  {{#if isVote}}
+                  <div><i class='fas fa-vote-yea text-success' style='width: 40px;height: 40px;margin-top:10px'></i>
+                    <p style="font-size:12px;">Puntuado</p>
+                  </div>
+                    <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden> Vote</button>
+                  {{else}}
+                  <div>
+                    <select class="form-control d-inline" id="score" style="width: 42px;height: 10%;padding:0px;">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white"> Vote</button>
+                  </div>
+                  {{/if}}
+                  <div idMovie="{{movie.id}}" id="iconFav">
+                    {{#if isFav}}
+                    <i class="fas fa-heart text-danger" id="heartFav"></i>
+                    {{else}}
+                    <i class="fas fa-heart text-secondary" id="heartFav"></i>
+                    {{/if}}
+                  </div>
+                  <div idMovie="{{movie.id}}" id="iconView">
+                    {{#if isView}}
+                    <i class="far fa-eye-slash border bordered rounded-circle" id="iconEye"></i>
+                    {{else}}
+                    <i class="far fa-eye border bordered rounded-circle" id="iconEye"></i>
+                    {{/if}}
+                  </div>
+                </div>
+                {{/if}}
+              </figcaption>
+            </figure>
+
+            <div class="card-text p-3" id="infoMovie">
+              <h5 class="mr-2">Título original:</h5>
+              <h6 class="mt-1">
+                {{#if movie.original_title}}{{movie.original_title}}{{else}}{{movie.title}}{{/if}}</h6>
+              <h5 class="mr-2">Fecha de estreno:</h5>
+              <h6 class="mt-1">{{movie.release_date}}</h6>
+              <h5 class="mr-2">Votación media:</h5>
+              <h6 class="mt-1">{{movie.vote_average}}</h6>
+              <h5 class="mr-2 mt-1" class="">Sinopsis:</h5>
+              {{#if movie.overview}}<h6 class="mt-2">{{movie.overview}}</h6>{{else}}
+              <h6 class="mt-2">No ahí descripción</h6>{{/if}}
+
+            </div>
+          </div>
+        </div>
+      </div>
       {{/if}}
     </div>
 

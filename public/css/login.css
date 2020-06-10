@@ -1,13 +1,20 @@
-/* Made with love by Mutiullah Samim*/
-
-@media only screen and (max-width: 560px)  {
+@media only screen and (max-width:1000px)  {
 
     .card{
-        width: 450px;
+        width: 200px !important;
         }
 
 }
+@media only screen and (max-width: 155555px)  {
 
+    .card{
+        width: 550px !important;
+        }
+
+}
+.card{
+    font-size: 19px !important;
+}
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
@@ -103,3 +110,13 @@ input:focus{
 .links a{
     margin-left: 4px;
 }
+
+.card-footer{
+    background-color: rgba(0,0,0,0.8) !important;
+    border: none;    
+}
+.card-header{
+    background-color: rgba(0,0,0,0.8) !important;
+    border: none;    
+}
+

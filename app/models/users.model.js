@@ -22,15 +22,20 @@ const userSchema = mongoose.Schema({
         required: false,
         unique: false
     },
-    comment: {
-        type: Number,
+    favorite:{
+        type: [Number],
         required: false,
-        unique: false
+        unique: false,
     },
-    favorites: {
-        type: Array,
+    viewedMovie: {
+        type: [Number],
         required: false,
-        unique: true
+        unique: true,
+    },
+    scores: {
+        type: [],
+        required: false,
+        unique: false,
     }
 }, {
     timestamps: true

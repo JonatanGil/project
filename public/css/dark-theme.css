@@ -1,3 +1,4 @@
+/* wrapper/body nav  */
 .c-dark-theme .c-header {
     background: #2c2c34;
     color: #e1e1e1;
@@ -71,11 +72,9 @@ a {
 .c-dark-theme .c-body{
     background-color: #0a0b18 !important;
 }
-.c-dark-theme .c-footer{
-    background: rgba(35, 35, 46,1) !important;
-    border-top: black;
-}
 
+
+/* Pagination */
 .c-dark-theme .darkMode{
     color: black;
 }
@@ -94,4 +93,15 @@ a {
 
 .c-dark-theme .c-icon{
     color: white;
+}
+
+
+.c-dark-theme .c-icon{
+    color: white;
+}
+
+.c-dark-theme .detail{
+    color:white;
+    background-color: #636f83;
+    border:none;
 }
