@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> headAttributes}}
+    <link href="/css/profile.css" rel="stylesheet">
+    <script defer src="js/darkModeBtn.js"></script>
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+    {{> navSidebar}}
+
+    <div class="c-wrapper">
+
+        {{> header}}
+
+        <div class="c-body p-2">
+
+            <div id="gridProfile">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
+                        <p class="card-text">
+                            {{#if user}}
+                        <h4>Nombre: {{user.name}}</h4>
+                        <h4>Email: {{user.email}}</h4>
+                        {{/if}}
+                        </p>
+                        <a href="/setting" class="btn btn-pill btn-block btn-secondary active">Setting</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="border-bottom: 1px solid rgb(20, 19, 19);">Favorites</h5>
+                        <p class="card-text">
+                            {{#if user}}
+                        <h4>Nombre: {{user.name}}</h4>
+                        <h4>Nombre: {{user.name}}</h4>
+                        {{/if}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CoreUI and necessary plugins-->
+            <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+            <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
