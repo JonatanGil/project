@@ -64,12 +64,28 @@
     grid-gap: 20px;
     grid-template-columns: 1fr;
 }
+
+.cardMovie{
+    margin:0px;
+    padding: 0px;
 }
-
-
+}
 .card-img-top{
     height: 80%;
 }
 .cardMovie{
     width: 100%;
+    border: none;
+    
+}
+#MoviePoster{
+    box-shadow: 0px -1px 40px 14px rgba(0,0,0,0.61);
+    width: 80%;
+    height: 80%;
+}
+.detail{
+    margin-bottom: -29px;
+}
+.card-header{
+    border:none;
 }

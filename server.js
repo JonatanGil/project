@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
     initCookies();
     initTemplatesEngine();
-    // await initDb();
+    await initDb();
     app.use(express.static(path.join(__dirname, 'public')));
     
     app.use('/', require('./app/routes/index.routes.js'));
