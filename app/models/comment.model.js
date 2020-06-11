@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const commentSchema = mongoose.Schema({
-    idComment:{
+    idMovie:{
         type: String,
         required: true,
         unique: false,

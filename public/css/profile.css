@@ -1,6 +1,75 @@
+
+@media only screen and (max-width: 16500px)  {
+    .cardGrid{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #profileInfo{
+        grid-row: 1 / 3;
+    }
+    
 #gridProfile{
     display: grid;
     grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
     grid-gap: 10px;
     align-items: start;
+}
+}
+@media only screen and (max-width: 1450px)  {
+   
+.cardGrid{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#profileInfo{
+    grid-row: 1 / 3;
+}
+
+#gridProfile{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    align-items: start;
+}
+
+}
+
+
+
+@media only screen and (max-width: 1200px)  {
+   
+.cardGrid{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr ;
+}
+
+#gridProfile{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    align-items: start;
+}
+}
+
+@media only screen and (max-width: 880px)  {
+    
+.cardGrid{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+}
+}
+
+
+.card-img-top{
+    height: 80%;
+}
+.cardMovie{
+    width: 100%;
 }

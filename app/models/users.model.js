@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
     viewedMovie: {
         type: [Number],
         required: false,
-        unique: true,
+        unique: false,
     },
     scores: {
         type: [],

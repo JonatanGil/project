@@ -9,10 +9,13 @@ module.exports = {
 async function isVote(idMovie2, idUser) {
     const user = await usersModel.findById(idUser);
     let scores = user.scores;
-    console.log(scores[0].idMovie);
-    for (let i = 0; i < scores.length; i++) {
-        if (scores[i].idMovie == idMovie2) { return true };
+    if (scores[0] != undefined) {
+        console.log(scores[0].idMovie);
+        for (let i = 0; i < scores.length; i++) {
+            if (scores[i].idMovie == idMovie2) { return true };
+        }
     }
+
     return false;
 }
 

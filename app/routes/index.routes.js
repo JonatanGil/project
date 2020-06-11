@@ -6,6 +6,7 @@ const authCtrl           = require('../controllers/auth.controller');
 const favoriteCtrl       = require('../controllers/favorite.controller');
 const movieCtrl          = require('../controllers/movies.controller');
 const voteCtrl           = require('../controllers/vote.controller');
+const viewCtrl           = require('../controllers/viewed.controller');
 
 router.get('/login',                authCtrl.login);
 router.post('/login',               authCtrl.signUp);
@@ -25,7 +26,7 @@ router.get('/detail/:idMovie',      usersCtrl.detail);
 
 router.post('/view/:idMovie',                   authCtrl.isLoggedIn, favoriteCtrl.addFavorite);
 router.post('/view/favorites/:idMovie',         authCtrl.isLoggedIn, favoriteCtrl.addFavorite);
-router.post('/view/viewedMovie/:idMovie',       authCtrl.isLoggedIn, movieCtrl.viewedMovie);
+router.post('/view/viewedMovie/:idMovie',       authCtrl.isLoggedIn, viewCtrl.viewedMovie);
 router.post('/view/movieScore/:idMovie/:score', authCtrl.isLoggedIn, voteCtrl.vote);
 
 

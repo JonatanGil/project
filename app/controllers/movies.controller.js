@@ -6,8 +6,6 @@ module.exports = {
     getMoviesLatest,
     getMoviesVoteAverage,
     getMoviesDetail,
-    viewedMovie,
-    isViewMovie,
 }
 //https://developers.themoviedb.org/3/genres/get-movie-list
 //https://api.themoviedb.org/3/discover/movie?api_key=46abaa78d32cf1e540336f2225aeec23&language=es&region=es&sort_by=release_date.desc&include_adult=false&include_video=false&page=1
@@ -22,6 +20,7 @@ async function getMoviesLatest(page) {
         });
         return movies;
 }
+
 
 async function getMoviesVoteAverage() {
     let movies = null;
@@ -43,28 +42,4 @@ async function getMoviesDetail(id){
         console.log("IDmovie movie.controller :"+myJson.id);
     });
     return movie;
-}
-
-async function viewedMovie(req, res) {
-    
-    const { idMovie } = req.params;
-    const { _id } = req.cookies.user;
-
-    const user = await usersModel.findById(_id);
-    let viewedMovies = user.viewedMovie;
-    favorites.toggleArrayItem(viewedMovies, idMovie);
-    
-    console.log("ADDVIEWED");
-    console.log("/idMovie:"+idMovie+" / user:"+user.name);
-    console.log(user);
-    await user.save();
-
-    return null;
-
-}
-
-async function isViewMovie(idMovie, idUser) {
-    const user = await usersModel.findById(idUser);
-    let viewedMovies = user.viewedMovie;
-    if(viewedMovies.includes(idMovie)){return true}else{return false};
 }

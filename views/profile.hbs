@@ -19,30 +19,86 @@
         <div class="c-body p-2">
 
             <div id="gridProfile">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
+                <div class="card text-center" id="profileInfo">
+                    <div class="card-body pt-1" style="justify-content: center;">
+                        <h5 class="card-title pb-3" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
                         <p class="card-text">
                             {{#if user}}
                         <h4>Nombre: {{user.name}}</h4>
                         <h4>Email: {{user.email}}</h4>
                         {{/if}}
                         </p>
-                        <a href="/setting" class="btn btn-pill btn-block btn-secondary active">Setting</a>
+                        <div class="d-flex pt-3" style="justify-content: center;">
+                            <a href="/setting" class="btn btn-pill btn-block btn-secondary active w-75"
+                                style="justify-self: center;">Setting</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title" style="border-bottom: 1px solid rgb(20, 19, 19);">Favorites</h5>
-                        <p class="card-text">
-                            {{#if user}}
-                        <h4>Nombre: {{user.name}}</h4>
-                        <h4>Nombre: {{user.name}}</h4>
+                    <h5 class="card-title m-2 text-center" style="border-bottom: 1px solid rgb(20, 19, 19);">
+                        Favoritos</h5>
+                    <div class="card-body cardGrid p-2">
+                        {{#if moviesFav}}{{#each moviesFav}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <div class="card-header bg-transparent">
+                                    <h6 class="card-title">{{this.title}}</h6>
+                                </div>
+                                <img class="card-img-top"
+                                    src="{{#if this.poster_path}}https://image.tmdb.org/t/p/w400{{this.poster_path}}
+                                    {{else}}https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700{{/if}}" alt="MoviePoster"
+                                    id="MoviePoster">
+                                <p class="card-text"></p>
+                                <a class="DetailMovie  mb-2" href="/detail/?idMovie={{this.id}}"
+                                    style="cursor: pointer;"><button
+                                        class="btn btn-secondary detail">Detalles</button></a>
+                            </div>
+                        </div>
+                        {{/each}}{{else}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <img class="card-img"
+                                    src="https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700"
+                                    alt="MoviePoster">
+                            </div>
+                        </div>
                         {{/if}}
                         </p>
                     </div>
                 </div>
+                <div class="card">
+                    <h5 class="card-title m-2 text-center" style="border-bottom: 1px solid rgb(20, 19, 19);">
+                        Visto</h5>
+                    <div class="card-body cardGrid p-2">
+                        {{#if moviesView}} {{#each moviesView}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <div class="card-header bg-transparent">
+                                    <h6 class="card-title">{{this.title}}</h6>
+                                </div>
+                                <img class="card-img-top"
+                                    src="{{#if this.poster_path}}https://image.tmdb.org/t/p/w400{{this.poster_path}}
+                                    {{else}}https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700{{/if}}" alt="MoviePoster" id="MoviePoster">
+                                <p class="card-text"></p>
+                                <a class="DetailMovie  mb-2" href="/detail/?idMovie={{this.id}}"
+                                    style="cursor: pointer;"><button
+                                        class="btn btn-secondary detail">Detalles</button></a>
+                            </div>
+                        </div>
+                        {{/each}}{{else}}
+                        <div class="card cardMovie">
+                            <div class="card-body text-center pt-0">
+                                <img class="card-img"
+                                    src="https://english2mee.files.wordpress.com/2018/07/proximamente.png?w=700"
+                                    alt="MoviePoster">
+                            </div>
+                        </div>
+                        {{/if}}
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
             <!-- CoreUI and necessary plugins-->

@@ -6,6 +6,7 @@ window.onload = function () {
     //darkModeBtn
     document.getElementById('lightMode').addEventListener('mousedown', removeActive);
     document.getElementById('darkMode').addEventListener('mousedown', removeActive);
+
 }
 
 //un active adtive pills
