@@ -19,9 +19,10 @@
   "engines": {
     "node": "12.14.X"
   },
-  "scripts": {
+    "scripts": {
     "dev": "nodemon server.js",
-    "prestart": "npm i"
+    "prestart": "npm i",
+    "start": "start"
   },
   "keywords": [],
   "author": "",
