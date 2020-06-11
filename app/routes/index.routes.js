@@ -15,6 +15,8 @@ router.get( '/logout',              authCtrl.logOut);
 
 router.get('/profile',              authCtrl.isLoggedIn, usersCtrl.profile);
 
+router.get('/settings',              authCtrl.isLoggedIn, usersCtrl.settings);
+
 router.get('/',                     usersCtrl.homePage);
 router.get('/home',                 usersCtrl.homePage);
 router.get('/home/:page',           usersCtrl.homePage);
@@ -29,14 +31,11 @@ router.post('/view/favorites/:idMovie',         authCtrl.isLoggedIn, favoriteCtr
 router.post('/view/viewedMovie/:idMovie',       authCtrl.isLoggedIn, viewCtrl.viewedMovie);
 router.post('/view/movieScore/:idMovie/:score', authCtrl.isLoggedIn, voteCtrl.vote);
 
-
 router.get('/api',                              authCtrl.isLoggedIn, usersCtrl.api);
 
 
 // router.get('/game',             authCtrl.isLoggedIn, usersCtrl.game);
 
-// If the user is already logged in, it will redirect to home
-// otherwise it will continue to the next routes
 router.use((req, res, next) => {
     if (req.cookies.user) {
         return res.redirect('/home');

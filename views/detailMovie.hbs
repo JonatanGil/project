@@ -34,7 +34,8 @@
                   <div><i class='fas fa-vote-yea text-success' style='width: 40px;height: 40px;margin-top:10px'></i>
                     <p style="font-size:12px;">Puntuado</p>
                   </div>
-                    <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden> Vote</button>
+                  <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden>
+                    Vote</button>
                   {{else}}
                   <div>
                     <select class="form-control d-inline" id="score" style="width: 42px;height: 10%;padding:0px;">
@@ -87,7 +88,46 @@
           </div>
         </div>
       </div>
+      {{!-- {{#if user}} --}}
+      <div id="gridComments">
+
+        <div class="card mt-3" id="divComment">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="comment">Comment:</label>
+
+              <form class="" action="/comment/" method="get">
+                <input type="text" name="idMovie" value="{{movie.id}}" hidden>
+                <textarea style="color:black" name="comment" rows="3"
+                  class="form-control">Escribe un comentario.</textarea>
+                <br><br>
+                <input class="btn btn-secondary" type="submit" value="comentar">
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        {{#if comment}}
+        <div class="card mt-3">
+          <div class="card-body">
+            <h3 class="card-title">{{comment.name}}</h3>
+          </div>
+        </div>
+
+        {{else}}
+        <div class="card mt-3">
+          <div class="card-body">
+            <h3 class="card-title mb-4">No han comentado aun esta pelicula.</h3>
+            
+            <p class="card-text p-3">Se el primero en comentar :)</p>
+          </div>
+        </div>
+        {{/if}}
+
+      </div>
       {{/if}}
+
     </div>
 
   </div>

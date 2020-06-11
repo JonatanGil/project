@@ -12,6 +12,16 @@
         grid-gap: 60px;
         margin-top: 20px;
     }
+    #divComment{
+        width: 100%;
+        grid-row: 1 / 999;
+        height: 278px;
+    }
+    #gridComments{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+    }
 }
 @media only screen and (max-width: 900px)  {
     #gridDetailMovie{
@@ -24,7 +34,14 @@
         grid-template-columns: 1fr 2fr;
         grid-gap: 10px;
         margin:0px;
-
+    }
+    #divComment{
+        width: 100%;
+        grid-row: 1 / 1;
+    }
+    #gridComments{
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
 #iconFav{
@@ -58,3 +75,7 @@
     box-shadow: 0px -1px 19px 14px rgba(0,0,0,0.61);
     height: 600px;
 }
+.card{
+    margin-bottom: 0px;
+}
+

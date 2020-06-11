@@ -65,6 +65,8 @@ async function profile(req, res) {
 async function settings(req, res) {
     console.log("settings login OK");
     const { user } = req.cookies;
+    user.createdAt = user.createdAt.substring(0,10);
+    // document.getElementById("demo").innerHTML = res.[0];
     res.render('settings', { user });
 }
 
