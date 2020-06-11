@@ -21,8 +21,7 @@
   },
     "scripts": {
     "dev": "nodemon server.js",
-    "prestart": "npm i",
-    "start": "start"
+    "prestart": "npm i"
   },
   "keywords": [],
   "author": "",
