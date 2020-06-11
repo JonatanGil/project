@@ -1,0 +1,13 @@
+#settingsProfileGrid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    width: 510px;
+}
+
+.infoStart{
+    justify-self: start;
+}
+.infoEnd{
+    justify-self: end;
+}

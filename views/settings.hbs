@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> headAttributes}}
+    <link href="/css/settings.css" rel="stylesheet">
+    <script defer src="/js/home.js"></script>
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+    {{> navSidebar}}
+
+    <div class="c-wrapper">
+
+        {{> header}}
+
+        <div class="c-body p-2">
+            <div class="d-flex justify-content-center">
+                <div class="card text-center ">
+                    <h5 class="card-title" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
+                    <div class="card-body pt-1">
+                        <div id="settingsProfileGrid">
+                            {{#if user}}
+                            <h5 class="infoEnd">Nombre: </h5>
+                            <h5 class="infoStart">{{user.name}}</h5>
+                            <h5 class="infoEnd">Email:</h5>
+                            <h5 class="infoStart"> {{user.email}}</h5>
+                            <h5 class="infoEnd">Cuenta desde:</h5>
+                            <h5 class="infoStart"> {{user.createdAt}}</h5>
+                            <h5 class="infoEnd">Email:</h5>
+                            <h5 class="infoStart"> {{user.email}}</h5>
+                            {{/if}}
+                        </div>
+                        <div class="d-flex pt-3 mt-2" style="justify-content: center;">
+                            <a href="/setting" class="btn btn-pill btn-block btn-secondary active w-50"
+                                style="justify-self: center;">Guardar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CoreUI and necessary plugins-->
+    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+
+</body>
+
+</html>
