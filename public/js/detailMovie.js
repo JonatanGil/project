@@ -7,6 +7,62 @@ window.onload = function () {
     document.getElementById('lightMode').addEventListener('mousedown', removeActive);
     document.getElementById('darkMode').addEventListener('mousedown', removeActive);
 
+    //commentBtn
+    document.getElementById('btnComment').addEventListener('click', addComment);
+    
+
+    viewComments();
+
+}
+
+async function viewComments() {
+
+
+    const idMovie = document.getElementById('btnComment').getAttribute("idmovie");
+    let divComments = document.getElementById('comentarios');
+    console.log(idMovie);
+    const resultado = await fetch('/details/comments/'+idMovie);
+
+    const res = await resultado.json();
+    console.log(res);
+
+    let textComents = "";
+
+    res.forEach(comment => {
+        let comentario = comment.comment;
+        let name = comment.nameUser;
+        if(name == undefined){name="Anonymous"}
+        textComents += "<div class='card mt-3'>"
+            + "<div class='card-body'>"
+            + "<h5 class='card-title'>"+name+"</h5>"
+            + "<p class='card-text p-3'>"+comentario+"</p>"
+            + "</div>"
+            + "</div>"
+    });
+
+    divComments.innerHTML = textComents;
+
+
+}
+
+async function addComment(ev) {
+    // console.log(ev.currentTarget);
+    // console.log(ev.currentTarget.attributes.idmovie);
+    const idMovie = ev.currentTarget.getAttribute("idmovie");
+
+    const comment = document.getElementById('textComment').value;
+    console.log(document.getElementById('textComment'));
+    console.log(comment);
+    const url = `/detail/comment/${idMovie}/${comment}`;
+    console.log(url);
+    await fetch(url, { method: 'POST' }).then(
+        setTimeout(() => {
+            viewComments();
+        }, 1000));
+    console.log("Add comment ok Finalizado");
+
+    
+
 }
 
 //un active adtive pills
@@ -76,4 +132,15 @@ async function voteMovie(e) {
     await fetch(url, { method: 'POST' });
     console.log("viewUpdate Finalizado");
 
+}
+
+async function getGenresNames(){
+    // let textGeneros = "";
+    // let resultado  = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=46abaa78d32cf1e540336f2225aeec23&language=es');
+    // generos = await resultado.json();
+    // generos = generos.genres;
+
+
+
+    // document.getElementById('viewGeneros').innerHTML=textGeneros;;
 }

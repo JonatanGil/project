@@ -79,3 +79,10 @@
     margin-bottom: 0px;
 }
 
+#comentarios .card-title{
+    text-decoration: underline #636f83;
+}
+#comentarios .card-title:first-letter{
+	font-size:2em;
+	font-family:serif;
+}

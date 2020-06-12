@@ -36,6 +36,7 @@
                   </div>
                   <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden>
                     Vote</button>
+                  <!--hiiden id queryselecto*-->
                   {{else}}
                   <div>
                     <select class="form-control d-inline" id="score" style="width: 42px;height: 10%;padding:0px;">
@@ -68,6 +69,9 @@
                     {{/if}}
                   </div>
                 </div>
+                {{else}}<i class="fas fa-heart text-danger" id="iconFav" hidden></i>
+                    <i class="far fa-eye-slash border bordered rounded-circle" id="iconView" hidden></i>
+                  <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden>
                 {{/if}}
               </figcaption>
             </figure>
@@ -83,6 +87,8 @@
               <h5 class="mr-2 mt-1" class="">Sinopsis:</h5>
               {{#if movie.overview}}<h6 class="mt-2">{{movie.overview}}</h6>{{else}}
               <h6 class="mt-2">No ahí descripción</h6>{{/if}}
+              <h6 class="mt-2">Generos:</h6>
+              <h6 class="mt-2" id="viewGeneros">{{#each movie.genres}}{{./name}}<br>{{/each}}</h6>
 
             </div>
           </div>
@@ -97,13 +103,13 @@
             <div class="form-group">
               <label for="comment">Comment:</label>
 
-              <form class="" action="/comment/" method="get">
-                <input type="text" name="idMovie" value="{{movie.id}}" hidden>
-                <textarea style="color:black" name="comment" rows="3"
-                  class="form-control">Escribe un comentario.</textarea>
-                <br><br>
-                <input class="btn btn-secondary" type="submit" value="comentar">
-              </form>
+              {{!-- <form class="" action="/comment/" method="get"> --}}
+              {{!-- <input type="text" name="idMovie" value="{{movie.id}}" hidden> --}}
+              <textarea style="color:black" id="textComment" rows="3"
+                class="form-control">Escribe un comentario.</textarea>
+              <br><br>
+              <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnComment" style="color:white"> Comentar</button>
+              {{!-- </form> --}}
 
             </div>
           </div>
@@ -112,27 +118,14 @@
         <div class="card mt-3" id="divComment">
           <div class="card-body">
             <h3 class="card-title">Comentario</h3>
-            <p class="card-text p-3">Para comentar solo tienes que iniciar sesión :)</p>
-          </div>
-        </div>
-        {{/if}}
-        {{#if comment}}
-        <div class="card mt-3">
-          <div class="card-body">
-            <h3 class="card-title">{{comment.name}}</h3>
-          </div>
-        </div>
-
-        {{else}}
-        <div class="card mt-3">
-          <div class="card-body">
-            <h3 class="card-title mb-4">No han comentado aun esta pelicula.</h3>
-
-            <p class="card-text p-3">Se el primero en comentar :)</p>
+            <p class="card-text p-3">Para comentar solo tienes que <a href="/login" style="color: white;text-decoration: underline white;"> iniciar sesión</a> :)</p>
+            <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnComment" style="color:white" hideen> Comentar</button>
           </div>
         </div>
         {{/if}}
 
+        <div id="comentarios">  
+        </div>
       </div>
       {{/if}}
 
@@ -147,3 +140,21 @@
 </body>
 
 </html>
+
+{{!-- 
+ {{#each comment}}
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title" ></h5>
+            <p class="card-text p-3">{{comment.idUser}}{{idUser}}</p>
+          </div>
+        </div>
+        {{else}}
+        <div class="card mt-3">
+          <div class="card-body">
+            <h3 class="card-title mb-4">No han comentado aun esta pelicula.</h3>
+
+            <p class="card-text p-3">Se el primero en comentar :)</p>
+          </div>
+        </div>
+        {{/each}} --}}

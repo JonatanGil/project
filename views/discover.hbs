@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> headAttributes}}
+    <link href="/css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/search.css">
+    <script defer src="/js/search.js"></script>
+
+</head>
+
+<body class="c-app c-dark-theme">
+
+    {{> navSidebar}}
+
+    <div class="c-wrapper">
+
+        {{> header}}
+
+        <div class="c-body p-2">
+            <div class="d-flex justify-content-center">
+                <div class="card">
+                    <div class="card-body text-center pt-0">
+                        <div class="card-header bg-transparent">
+                            <h3 class="card-title">Buscador</h3>
+                        </div>
+                        <div id="divSearchTitulo">
+                            <p class="mt-1" style="justify-self: end;">Titulo:</p><input class="form-control"
+                                type="text" placeholder="Titutlo" aria-label="Search" id="titulo">
+                            <div>
+                            </div>
+                        </div>
+                        <div id="divSearchAll">
+                            <div class="mt-4">
+                                Genero: <br><select class="d-inline form-control w-75 ml-3" id="genero">
+                                </select><br>
+                            </div>
+                            <div>
+                                Año:<br>
+                                Desde:<input class="d-inline form-control w-75 ml-3 pl-2 pr-0" type="number" id="desde"
+                                    min="1897" max="2023" placeholder="1897" aria-label="desde"><br>
+                                Hasta:<input class="d-inline form-control w-75 ml-3 pl-2 pr-0 mt-1" id="hasta"
+                                    min="1897" max="2022" type="number" placeholder="2022" aria-label="hasta"
+                                    style="margin-left:18px !important;"><br>
+                            </div>
+                        </div>
+
+                        <input type="date" id="datemax" name="datemax" max="1979-12-31" hidden>
+
+                        <button class="btn btn-secondary detail mt-4 p-2" id="search">Buscar</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="card p-3 w-100 align-self-center">
+                <div class="card-body p-0">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination m-0 justify-content-center">
+                            {{{paginationText}}}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CoreUI and necessary plugins-->
+        <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+        <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+
+</body>
+
+</html>

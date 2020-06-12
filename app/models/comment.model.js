@@ -16,6 +16,11 @@ const commentSchema = mongoose.Schema({
         required: true,
         unique: false,
     },
+    nameUser:{
+        type: String,
+        required: false,
+        unique: false,
+    }
 }, {
     timestamps: true
 });

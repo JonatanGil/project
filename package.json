@@ -19,11 +19,14 @@
   "engines": {
     "node": "12.14.X"
   },
-    "scripts": {
+  "scripts": {
     "dev": "nodemon server.js",
     "prestart": "npm i"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  }
 }

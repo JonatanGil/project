@@ -1,9 +1,10 @@
-const usersModel     = require('../models/users.model');
-const moviesCtrl     = require('./movies.controller');
-const favoriteCtrl   = require('./favorite.controller');
+const usersModel = require('../models/users.model');
+const moviesCtrl = require('./movies.controller');
+const favoriteCtrl = require('./favorite.controller');
 const paginationCtrl = require('./pagination.controller');
-const voteCtrl       = require('./vote.controller');
-const viewCtrl       = require('./viewed.controller');
+const voteCtrl = require('./vote.controller');
+const viewCtrl = require('./viewed.controller');
+const commentCtrl = require('../controllers/comment.controller');
 
 module.exports = {
     homePage,
@@ -13,7 +14,34 @@ module.exports = {
     profile,
     settings,
     detail,
+    search,
     get: async (req, res) => res.json(await usersModel.find({})),
+}
+
+async function search(req, res) {
+    console.log("search login OK");
+    console.log(req.query);
+        const { query } = req.query;
+        console.log("query:" + query);
+        if (query != undefined) {
+        let cadena = query.split("/");
+        let titulo = cadena[0];
+        let page =  cadena[1];
+        console.log(titulo+"/"+page);
+
+        let movies = await moviesCtrl.getMoviesSearch(titulo, page);
+        let paginationText = await paginationCtrl.getPaginationsSearch(page, movies.total_pages, titulo);
+        movies = movies.results;
+
+        const { user } = req.cookies;
+        res.render('search', { user, paginationText, movies });
+    } else {
+        console.log("no query");
+        const { user } = req.cookies;
+        res.render('search', { user });
+
+    }
+
 }
 
 async function homePage(req, res) {
@@ -24,6 +52,7 @@ async function homePage(req, res) {
     let paginationText = await paginationCtrl.getPaginations(page, movies.total_pages);
     movies = movies.results;
     const { user } = req.cookies;
+    console.log(movies);
     res.render('home', { user, movies, paginationText });
 }
 
@@ -58,6 +87,7 @@ async function profile(req, res) {
     const idUser = user._id;
     let moviesFav = await favoriteCtrl.getMoviesFavs(idUser);
     let moviesView = await viewCtrl.getMoviesView(idUser);
+    console.log(moviesFav);
     console.log("movies FAVSSSSSSSSSSSSSSSSSS");
     res.render('profile', { user, moviesFav, moviesView });
 }
@@ -65,7 +95,7 @@ async function profile(req, res) {
 async function settings(req, res) {
     console.log("settings login OK");
     const { user } = req.cookies;
-    user.createdAt = user.createdAt.substring(0,10);
+    user.createdAt = user.createdAt.substring(0, 10);
     // document.getElementById("demo").innerHTML = res.[0];
     res.render('settings', { user });
 }
@@ -74,13 +104,13 @@ async function detail(req, res) {
     let idMovie;
     if (!req.query.idMovie) { idMovie = 0 } else { idMovie = req.query.idMovie; }
     console.log("DETAIL movie");
-    
+
     let { user } = req.cookies;
     console.log(user);
     if (!req.cookies.user) {
         user = null;
         let movie = await moviesCtrl.getMoviesDetail(idMovie);
-        let isFav = false;let isView = false;let isVote = false;
+        let isFav = false; let isView = false; let isVote = false;
 
         res.render('detailMovie', { user, movie, isFav, isView, isVote });
     } else {
@@ -90,8 +120,12 @@ async function detail(req, res) {
         let isFav = await favoriteCtrl.isFavMovie(idMovie, user._id);
         let isView = await viewCtrl.isViewMovie(idMovie, user._id);
         let isVote = await voteCtrl.isVote(idMovie, user._id);
-        console.log("/////fav: "+isFav+"//////isvIEW"+isView+"///////isvote:"+isVote);
-        
+        // console.log("/////fav: "+isFav+"//////isvIEW"+isView+"///////isvote:"+isVote + "//n \n" + comments);
+        // console.log("comment" + comments);
+        // console.log("movie" + movie);
+        console.log("---------------------------");
+        console.log(movie);
+
         res.render('detailMovie', { user, movie, isFav, isView, isVote });
     }
 }
