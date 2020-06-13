@@ -55,8 +55,12 @@ async function saveSettings() {
     }
   });
 
+  setTimeout(() => {
+    location.reload();
+  }, 500);
 
   // const res = await resultado.json();
+  
 
 }
 
