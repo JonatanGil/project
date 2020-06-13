@@ -14,14 +14,17 @@ router.post('/register',                          authCtrl.signUp);
 router.get( '/logout',                            authCtrl.logOut);
 
 router.get('/profile',                            authCtrl.isLoggedIn, usersCtrl.profile);
+router.get('/profile/Base64',                     authCtrl.isLoggedIn, usersCtrl.getBase64IMG);
  
 router.get('/settings',                           authCtrl.isLoggedIn, usersCtrl.settings);
+router.post('/settings/save/profile',             authCtrl.isLoggedIn, usersCtrl.settings);
 
 router.get('/',                                   usersCtrl.homePage);
 router.get('/home',                               usersCtrl.homePage);
 router.get('/home/:page',                         usersCtrl.homePage);
 
 router.get('/topMovies',                          usersCtrl.topMovies);
+router.get('/topMovies/:page',                    usersCtrl.topMovies);
 
 router.get('/detail',                             usersCtrl.detail);
 router.get('/detail/:idMovie',                    usersCtrl.detail);

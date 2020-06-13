@@ -23,9 +23,9 @@ async function getMoviesLatest(page) {
 }
 
 
-async function getMoviesVoteAverage() {
+async function getMoviesVoteAverage(page) {
     let movies = null;
-    await fetch('https://api.themoviedb.org/3/discover/movie?api_key=46abaa78d32cf1e540336f2225aeec23&language=es&region=es&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1')
+    await fetch('https://api.themoviedb.org/3/discover/movie?api_key=46abaa78d32cf1e540336f2225aeec23&language=es&region=es&sort_by=vote_average.desc&include_adult=false&include_video=false&page='+page)
     .then(function (response) { return response.json(); })
     .then(function (myJson) {
         movies = myJson;

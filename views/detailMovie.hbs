@@ -70,9 +70,9 @@
                   </div>
                 </div>
                 {{else}}<i class="fas fa-heart text-danger" id="iconFav" hidden></i>
-                    <i class="far fa-eye-slash border bordered rounded-circle" id="iconView" hidden></i>
-                  <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden>
-                {{/if}}
+                <i class="far fa-eye-slash border bordered rounded-circle" id="iconView" hidden></i>
+                <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnVote" style="color:white" hidden>
+                  {{/if}}
               </figcaption>
             </figure>
 
@@ -94,7 +94,6 @@
           </div>
         </div>
       </div>
-      {{!-- {{#if user}} --}}
       <div id="gridComments">
 
         {{#if user}}
@@ -103,13 +102,10 @@
             <div class="form-group">
               <label for="comment">Comment:</label>
 
-              {{!-- <form class="" action="/comment/" method="get"> --}}
-              {{!-- <input type="text" name="idMovie" value="{{movie.id}}" hidden> --}}
               <textarea style="color:black" id="textComment" rows="3"
                 class="form-control">Escribe un comentario.</textarea>
               <br><br>
               <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnComment" style="color:white"> Comentar</button>
-              {{!-- </form> --}}
 
             </div>
           </div>
@@ -118,13 +114,15 @@
         <div class="card mt-3" id="divComment">
           <div class="card-body">
             <h3 class="card-title">Comentario</h3>
-            <p class="card-text p-3">Para comentar solo tienes que <a href="/login" style="color: white;text-decoration: underline white;"> iniciar sesión</a> :)</p>
-            <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnComment" style="color:white" hideen> Comentar</button>
+            <p class="card-text p-3">Para comentar solo tienes que <a href="/login"
+                style="color: white;text-decoration: underline white;"> iniciar sesión</a> :)</p>
+            <button class="btn btn-dark" idMovie="{{movie.id}}" id="btnComment" style="color:white" hideen>
+              Comentar</button>
           </div>
         </div>
         {{/if}}
 
-        <div id="comentarios">  
+        <div id="comentarios">
         </div>
       </div>
       {{/if}}
@@ -140,21 +138,3 @@
 </body>
 
 </html>
-
-{{!-- 
- {{#each comment}}
-        <div class="card mt-3">
-          <div class="card-body">
-            <h5 class="card-title" ></h5>
-            <p class="card-text p-3">{{comment.idUser}}{{idUser}}</p>
-          </div>
-        </div>
-        {{else}}
-        <div class="card mt-3">
-          <div class="card-body">
-            <h3 class="card-title mb-4">No han comentado aun esta pelicula.</h3>
-
-            <p class="card-text p-3">Se el primero en comentar :)</p>
-          </div>
-        </div>
-        {{/each}} --}}

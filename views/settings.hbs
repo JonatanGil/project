@@ -4,7 +4,7 @@
 <head>
     {{> headAttributes}}
     <link href="/css/settings.css" rel="stylesheet">
-    <script defer src="/js/home.js"></script>
+    <script defer src="/js/settings.js"></script>
 
 </head>
 
@@ -23,19 +23,38 @@
                     <div class="card-body pt-1">
                         <div id="settingsProfileGrid">
                             {{#if user}}
+
+
+
+                            <div style="grid-column: 1 / 3;display:grid;justify-content-center;">
+                                <div id="noImage">
+                                    <svg class="bi bi-person-fill" width="4em" height="4em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                
+                                <img id="img" style="justify-self: center;" width="300">
+                                <input class="mt-2" style="justify-self: center;" id="imgUpload" type='file'>
+                            </div>
+
                             <h5 class="infoEnd">Nombre: </h5>
-                            <h5 class="infoStart">{{user.name}}</h5>
+                            <h5 class="infoStart"><input type="text" id="nombre" placeholder=" {{user.name}}" name="{{user.name}}" alt="{{user._id}}" ></h5>
                             <h5 class="infoEnd">Email:</h5>
                             <h5 class="infoStart"> {{user.email}}</h5>
                             <h5 class="infoEnd">Cuenta desde:</h5>
                             <h5 class="infoStart"> {{user.createdAt}}</h5>
-                            <h5 class="infoEnd">Email:</h5>
-                            <h5 class="infoStart"> {{user.email}}</h5>
+                            <h5 class="infoEnd">Contraseña actual: <strong style="font-size: 14px;">Requerida para una nueva contraseña</strong></h5>
+                            <h5 class="infoStart"><input type="password" id="pwdActual"> </h5>
+                            <h5 class="infoEnd">Nueva contraseña:</h5>
+                            <h5 class="infoStart"><input type="password" id="pwdNueva"> </h5>
                             {{/if}}
                         </div>
                         <div class="d-flex pt-3 mt-2" style="justify-content: center;">
-                            <a href="/setting" class="btn btn-pill btn-block btn-secondary active w-50"
-                                style="justify-self: center;">Guardar</a>
+                            <a class="active w-50"
+                                style="justify-self: center;" ><button class="btn btn-pill btn-block btn-secondary " id="save">Guardar</button></a>   
                         </div>
                     </div>
                 </div>

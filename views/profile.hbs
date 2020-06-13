@@ -4,7 +4,7 @@
 <head>
     {{> headAttributes}}
     <link href="/css/profile.css" rel="stylesheet">
-    <script defer src="js/darkModeBtn.js"></script>
+    <script defer src="js/profile.js"></script>
 
 </head>
 
@@ -24,6 +24,15 @@
                         <h5 class="card-title pb-3" style="border-bottom: 1px solid rgb(20, 19, 19);">Profile</h5>
                         <p class="card-text">
                             {{#if user}}
+                        <div id="noImage">
+                            <svg class="bi bi-person-fill" width="4em" height="4em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <img id="img" style="justify-self: center;" width="200" class="mb-2">
                         <h4>Nombre: {{user.name}}</h4>
                         <h4>Email: {{user.email}}</h4>
                         {{/if}}

@@ -15,7 +15,8 @@
   </button>
   <ul class="c-header-nav d-md-down-none">
     <li class="c-header-nav-item px-3" id="homePageActiveNav"><a class="c-header-nav-link" href="/home">Inicio</a></li>
-    <li class="c-header-nav-item px-3" id="topMoviesActiveNav"><a class="c-header-nav-link" href="/topMovies">Top Movies</a></li>
+    <li class="c-header-nav-item px-3" id="topMoviesActiveNav"><a class="c-header-nav-link" href="/topMovies">Top
+        Movies</a></li>
     <li class="c-header-nav-item px-3" id="gameActiveNav"><a class="c-header-nav-link" href="/search">Buscar</a></li>
     <li class="c-header-nav-item px-3" id="apiActiveNav"><a class="c-header-nav-link" href="/api">Api</a></li>
   </ul>
@@ -56,16 +57,28 @@
   <ul class="c-header-nav">
     <li class="c-header-nav-item dropdown mr-3"><a class="c-header-nav-link" data-toggle="dropdown" href="#"
         role="button" aria-haspopup="true" aria-expanded="false">
-        {{#if user.name}}
-        
+        {{#if user}}
+
         {{user.name}}
+        {{#if base64}}
+        <div class="c-avatar">
+          <img src="data:image/, {{base64}}">
+        </div>
+        {{else}}
         <div class="c-avatar">
           <svg class="c-icon mfe-2">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
           </svg>
         </div>
+        {{/if}}
         {{else}}
-        <div class="c-avatar"><img class="c-avatar-img" src="" alt="IMG"></div>
+        <div class="c-avatar">
+          <a href="/login">
+            <svg class="c-icon mfe-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+            </svg>
+          </a>
+        </div>
         {{/if}}
       </a>
       <div class="dropdown-menu dropdown-menu-right pt-0">

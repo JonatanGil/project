@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 5000;
     
     // To transfer data with client, this way client can send a whole form
     app.use(express.urlencoded({ extended: true }));
-    app.use(express.json());
+    app.use(express.json({limit:"1gb"}));
 
-    app.use(require('morgan')('tiny')); // logger middleware
+    app.use(require('morgan')('tiny')); // logger middlewar0
 
     initCookies();
     initTemplatesEngine();

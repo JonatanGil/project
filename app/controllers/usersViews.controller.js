@@ -5,6 +5,8 @@ const paginationCtrl = require('./pagination.controller');
 const voteCtrl = require('./vote.controller');
 const viewCtrl = require('./viewed.controller');
 const commentCtrl = require('../controllers/comment.controller');
+const settingsCtrl = require('../controllers/settings.controller');
+
 
 module.exports = {
     homePage,
@@ -15,19 +17,67 @@ module.exports = {
     settings,
     detail,
     search,
+    getBase64IMG,
+    getBase64IMGtext,
     get: async (req, res) => res.json(await usersModel.find({})),
 }
+
+async function getBase64IMG(req, res){
+    
+    console.log("get base64img");
+    const { user } = req.cookies;
+
+    let userBase = await usersModel.findById(user._id);
+    // console.log(userBase.image);
+    base64 = userBase.image;
+    console.log("get base64");
+    
+    res.json( base64 );
+}
+
+
+async function getBase64IMGtext(_id){
+    
+    console.log("get base64imgtext");
+
+    let userBase = await usersModel.findById(_id);
+    // console.log(userBase.image);
+    base64 = userBase.image;
+    console.log("get base64");
+
+    return base64;
+}
+
+
+
+async function settings(req, res) {
+    console.log("settings login OK");
+    const { user } = req.cookies;
+
+    if (req.body.name != undefined) {
+        const { base64, name, _id, pwdActual, pwdNueva } = req.body;
+        user.createdAt = user.createdAt.substring(0, 10);
+        settingsCtrl.saveSettings(base64, name, _id, pwdActual, pwdNueva);
+        
+        res.render('settings', { user });
+    } else {
+        console.log("no guarda");
+        user.createdAt = user.createdAt.substring(0, 10);
+        res.render('settings', { user });
+    }
+}
+
 
 async function search(req, res) {
     console.log("search login OK");
     console.log(req.query);
-        const { query } = req.query;
-        console.log("query:" + query);
-        if (query != undefined) {
+    const { query } = req.query;
+    console.log("query:" + query);
+    if (query != undefined) {
         let cadena = query.split("/");
         let titulo = cadena[0];
-        let page =  cadena[1];
-        console.log(titulo+"/"+page);
+        let page = cadena[1];
+        console.log(titulo + "/" + page);
 
         let movies = await moviesCtrl.getMoviesSearch(titulo, page);
         let paginationText = await paginationCtrl.getPaginationsSearch(page, movies.total_pages, titulo);
@@ -48,23 +98,27 @@ async function homePage(req, res) {
     let page;
     if (req.query.page == undefined) { page = parseInt(1) } else { page = parseInt(req.query.page) }
     console.log("Home login OK");
+    const { user } = req.cookies;
+    console.log(user);
     let movies = await moviesCtrl.getMoviesLatest(page);
     let paginationText = await paginationCtrl.getPaginations(page, movies.total_pages);
     movies = movies.results;
-    const { user } = req.cookies;
-    console.log(movies);
-    res.render('home', { user, movies, paginationText });
+    let base64 = undefined;
+    if(user !=undefined){let base64 = getBase64IMGtext(user._id);}
+    
+    // console.log(movies);
+    res.render('home', { user, movies, paginationText, base64 });
 }
 
 async function topMovies(req, res) {
     console.log("topMovies login OK");
     console.log(req.query);
     if (req.query.page == undefined) { page = parseInt(1) } else { page = parseInt(req.query.page) }
-    let movies = await moviesCtrl.getMoviesVoteAverage();
-    let paginationText = await paginationCtrl.getPaginations(page, movies.total_pages);
+    let movies = await moviesCtrl.getMoviesVoteAverage(page);
+    let paginationText = await paginationCtrl.getPaginationTopMovies(page, movies.total_pages);
     movies = movies.results;
     const { user } = req.cookies;
-    console.log(movies);
+    // console.log(movies);
     console.log(paginationText);
     res.render('topMovies', { user, movies, paginationText });
 }
@@ -92,13 +146,6 @@ async function profile(req, res) {
     res.render('profile', { user, moviesFav, moviesView });
 }
 
-async function settings(req, res) {
-    console.log("settings login OK");
-    const { user } = req.cookies;
-    user.createdAt = user.createdAt.substring(0, 10);
-    // document.getElementById("demo").innerHTML = res.[0];
-    res.render('settings', { user });
-}
 
 async function detail(req, res) {
     let idMovie;
@@ -124,7 +171,7 @@ async function detail(req, res) {
         // console.log("comment" + comments);
         // console.log("movie" + movie);
         console.log("---------------------------");
-        console.log(movie);
+        // console.log(movie);
 
         res.render('detailMovie', { user, movie, isFav, isView, isVote });
     }

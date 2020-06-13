@@ -62,7 +62,11 @@ async function signIn(req, res) {
         msg = 'User does not exists...';
     }
     else if (password === user.password) {
+        console.log("Cookie START");
+        user.password="";
+        user.image="";
         res.cookie('user', user, OPTS_COOKIE);
+        console.log(res.user);
         return res.redirect('/');
     }
     else {

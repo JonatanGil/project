@@ -13,6 +13,8 @@ window.onload = function () {
 
     viewComments();
 
+    
+
 }
 
 async function viewComments() {
