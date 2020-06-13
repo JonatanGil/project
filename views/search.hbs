@@ -26,23 +26,26 @@
                         </div>
                         <div id="divSearchTitulo">
                             <p class="mt-1" style="justify-self: end;">Titulo:</p><input class="form-control"
-                                type="text" placeholder="Titutlo" aria-label="Search" id="titulo">
+                                type="text" placeholder="Título" aria-label="Search" id="titulo">
                             <div>
                             </div>
                         </div>
                         <div id="divSearchAll">
-                            <div class="mt-4">
+                            {{!-- <div class="mt-4">
                                 Genero: <br><select class="d-inline form-control w-75 ml-3" id="genero">
                                     
                                 </select><br>
                             </div>
+                            <div> --}}
                             <div>
-                                Region: <input class="d-inline form-control w-75 ml-3 pl-2 pr-0" type="text" id="region"
+                                Región: <input class="d-inline form-control w-75 ml-3 pl-2 pr-0" type="text" id="region"
                                     placeholder="ES" aria-label="region"><br>
-                                <br>
+                            </div>
+                            <div>
                                 Año: <br><input class="d-inline form-control w-75 ml-3 pl-2 pr-0" type="number"
                                     id="desde" min="1897" max="2023" placeholder="1897"><br>
                             </div>
+                            {{!-- </div> --}}
                         </div>
 
 
@@ -66,7 +69,7 @@
                             id="MoviePoster">
                         <p class="card-text"></p>
                         <a class="DetailMovie  mb-2" href="/detail/?idMovie={{this.id}}"
-                            style="cursor: pointer;"><button class="btn btn-secondary detail">Details</button></a>
+                            style="cursor: pointer;"><button class="btn btn-secondary detail">Detalles</button></a>
                     </div>
                 </div>
                 {{/each}}
