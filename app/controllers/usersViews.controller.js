@@ -86,9 +86,14 @@ async function search(req, res) {
         const { user } = req.cookies;
         res.render('search', { user, paginationText, movies });
     } else {
-        console.log("no query");
+        console.log("Search");
         const { user } = req.cookies;
-        res.render('search', { user });
+        console.log(user);
+        if (req.query.page == undefined) { page = parseInt(1) } else { page = parseInt(req.query.page) }
+        let movies = await moviesCtrl.getMoviesLatest(page);
+        let paginationText = await paginationCtrl.getPaginationTopMoviesNoSearch(page, movies.total_pages);
+        movies = movies.results;
+        res.render('search', { user, paginationText, movies });
 
     }
 

@@ -57,13 +57,13 @@ async function addComment(ev) {
     console.log(comment);
     const url = `/detail/comment/${idMovie}/${comment}`;
     console.log(url);
+    console.log(document.getElementById('textComment'));
+    document.getElementById('textComment').value="";
     await fetch(url, { method: 'POST' }).then(
         setTimeout(() => {
             viewComments();
         }, 1000));
     console.log("Add comment ok Finalizado");
-
-    
 
 }
 

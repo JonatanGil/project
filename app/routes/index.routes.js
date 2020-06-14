@@ -1,5 +1,5 @@
-const express = require('express');
-const router  = express.Router(); 
+const express            = require('express');
+const router             = express.Router(); 
 
 const usersCtrl          = require('../controllers/usersViews.controller');
 const authCtrl           = require('../controllers/auth.controller');
@@ -10,8 +10,8 @@ const commentCtrl        = require('../controllers/comment.controller');
 
 router.get('/login',                              authCtrl.login);
 router.post('/login',                             authCtrl.signUp);
-router.post('/register',                          authCtrl.signUp);
 router.get( '/logout',                            authCtrl.logOut);
+router.post('/register',                          authCtrl.signUp);
 
 router.get('/profile',                            authCtrl.isLoggedIn, usersCtrl.profile);
 router.get('/profile/Base64',                     authCtrl.isLoggedIn, usersCtrl.getBase64IMG);

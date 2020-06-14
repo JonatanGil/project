@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 5000;
     
     app.use('/', require('./app/routes/index.routes.js'));
     
-    const PORT = process.env.PORT || 3000; app.listen(PORT, () => { console.log(`App listening on port ${PORT}!`); });
+    const PORT = process.env.PORT || 3001; app.listen(PORT, () => { console.log(`App listening on port ${PORT}!`); });
 })();
 
 function initCookies() {

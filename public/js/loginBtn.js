@@ -14,6 +14,8 @@ function removeActive(ev) {
     ev.currentTarget.classList.remove('active');
     ev.currentTarget.style.color='#007bff';    
     document.querySelectorAll('.msgError').forEach(msgError => msgError.parentNode.removeChild(msgError));
+    var AccountCreated = document.querySelector('.msgAccountCreated');
+    if(AccountCreated!=null){ AccountCreated.parentNode.removeChild(AccountCreated);}
 }
 
 //darkmodeActive UnActive

@@ -42,7 +42,7 @@ async function signUp(req, res) {
 
         await user.save({ name, password, email });
         console.log('account created');
-        res.render('login', { msg: 'Account created' });
+        res.render('login', { accountCreated: 'Account created' });
 
     } else {
         signIn(req, res);

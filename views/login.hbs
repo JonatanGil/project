@@ -33,7 +33,7 @@
                                     <h3>Sign In</h3>
                                     <div class="d-flex justify-content-end social_icon">
                                         {{!-- <span><i class="fab fa-facebook-square"></i></span> --}}
-                                        <span><i class="fab fa-google-plus-square"></i></span>
+                                        {{!-- <span><i class="fab fa-google-plus-square"></i></span> --}}
                                         {{!-- <span><i class="fab fa-twitter-square"></i></span> --}}
                                     </div>
                                 </div>
@@ -56,6 +56,9 @@
 
                                         {{#if msg}}
                                         <p class="msgError" style="color: red">{{msg}}</p>
+                                        {{/if}}
+                                        {{#if accountCreated}}
+                                        <p class="msgAccountCreated" style="color: rgb(30, 236, 30)">{{accountCreated}}</p>
                                         {{/if}}
 
                                         {{!-- <div class="row align-items-center remember">
@@ -94,7 +97,7 @@
                                 <div class="card-header">
                                     <h3>Register</h3>
                                     <div class="d-flex justify-content-end social_icon">
-                                        <span><i class="fab fa-google-plus-square"></i></span>
+                                        {{!-- <span><i class="fab fa-google-plus-square"></i></span> --}}
                                     </div>
                                 </div>
                                 <div class="card-body">

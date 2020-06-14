@@ -3,7 +3,7 @@ window.onload = function () {
     document.getElementById('lightMode').addEventListener('mousedown', removeActive);
     document.getElementById('darkMode').addEventListener('mousedown', removeActive);
 
-    viewGenres();
+    // viewGenres();
 
     document.getElementById('search').addEventListener('click', searchMovies);
 
