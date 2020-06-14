@@ -27,22 +27,23 @@ async function signUp(req, res) {
         const userDuplicate = await usersModel.find({ name });
         let fieldsEmptys = '';
 
-        if (!name)     { fieldsEmptys += '-name' };
-        if (!password) { fieldsEmptys += '-password' }
-        if (!email)    { fieldsEmptys += '-email' }
+        if (!name)     { fieldsEmptys += '-Nombre' };
+        if (!password) { fieldsEmptys += '-Contraseña' }
+        if (!email)    { fieldsEmptys += '-Email' }
         if (!name || !password || !email) {
-            return res.render('register', { msg: 'Empty fields register:' + fieldsEmptys });
+            return res.render('register', { msg: 'Campos vacíos en registro:' + fieldsEmptys });
         }
 
         console.log("EmailDuplicado length  0==No a encontrado email creaCuenta  1== A encontrado email en mongose no crea " + emailDuplicate.length);
-        if (emailDuplicate.length === 1) { return res.render('login', { msg: 'The mail is already used' }) };
-        if ( userDuplicate.length === 1) { return res.render('login', { msg: 'The user is already used' }) };
+        let msg="";
+        if (emailDuplicate.length === 1) { msg += 'El correo esta en  uso';};
+        if (userDuplicate.length === 1) { msg +=' / El usuario ya esta en uso'};
+        if(emailDuplicate.length === 1 || userDuplicate.length === 1){return res.render('register', { msg });}
 
         const user = new usersModel({ name, password, email });
 
         await user.save({ name, password, email });
-        console.log('account created');
-        res.render('login', { accountCreated: 'Account created' });
+        res.render('login', { accountCreated: 'Cuenta creada' });
 
     } else {
         signIn(req, res);
@@ -51,15 +52,15 @@ async function signUp(req, res) {
 
 async function signIn(req, res) {
     const { name, password } = req.body;
-    let fieldsEmptys = 'Empty fields login:';
-    if(!name)     { fieldsEmptys += "-name" }
-    if(!password) { fieldsEmptys += "-password" }
+    let fieldsEmptys = 'Campos vacíos en login:';
+    if(!name)     { fieldsEmptys += "-Nombre" }
+    if(!password) { fieldsEmptys += "-contraseña" }
     if(!name || !password) { return res.render('login', { msg: fieldsEmptys }); }
     let msg = '';
     const user = await usersModel.findOne({ name });
 
     if (!user) {
-        msg = 'User does not exists...';
+        msg = 'El usuario no existe...';
     }
     else if (password === user.password) {
         console.log("Cookie START");
@@ -70,7 +71,7 @@ async function signIn(req, res) {
         return res.redirect('/');
     }
     else {
-        msg = `Password doesn't match!`;
+        msg = `La contraseña no coincide!`;
     }
 
     res.render('login', { msg });

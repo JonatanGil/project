@@ -15,15 +15,15 @@ async function getPaginations(page, totalPages) {
     console.log("Total de paginas:" + totalPages);
 
     if (page - 1 > 0) {
-        previusText = "<li class='page-item'><a class='page-link' href='/home/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item'><a class='page-link' href='/home/?page=" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     } else {
-        previusText = "<li class='page-item disabled'><a class='page-link' href='/home/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item disabled'><a class='page-link' href='/home/?page=" + (page - 1) + "' tabindex='-1'>Siguiente</a></li>";
     }
 
     if (page + 1 < totalPages) {
-        nextText = "<li class='page-item'><a class='page-link' href='/home/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item'><a class='page-link' href='/home/?page=" + (page+1) + "'>Siguiente</a></li>";
     } else {
-        nextText = "<li class='page-item disabled'><a class='page-link' href='/home/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item disabled'><a class='page-link' href='/home/?page=" + (page+1) + "'>Siguiente</a></li>";
     }   
     console.log("textLeft page:" +(page-2));
     if((page - 2) > 0){
@@ -50,15 +50,15 @@ async function getPaginationTopMovies(page, totalPages) {
     console.log("Total de paginas:" + totalPages);
 
     if (page - 1 > 0) {
-        previusText = "<li class='page-item'><a class='page-link' href='/topMovies/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item'><a class='page-link' href='/topMovies/?page=" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     } else {
-        previusText = "<li class='page-item disabled'><a class='page-link' href='/topMovies/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item disabled'><a class='page-link' href='/topMovies/?page=" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     }
 
     if (page + 1 < totalPages) {
-        nextText = "<li class='page-item'><a class='page-link' href='/topMovies/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item'><a class='page-link' href='/topMovies/?page=" + (page+1) + "'>Siguiente</a></li>";
     } else {
-        nextText = "<li class='page-item disabled'><a class='page-link' href='/topMovies/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item disabled'><a class='page-link' href='/topMovies/?page=" + (page+1) + "'>Siguiente</a></li>";
     }   
     console.log("textLeft page:" +(page-2));
     if((page - 2) > 0){
@@ -86,15 +86,15 @@ async function getPaginationsSearch(page, totalPages, titulo) {
     let pagina = Number(page);
 
     if (page - 1 > 0) {
-        previusText = "<li class='page-item'><a class='page-link' href='/search/?query="+titulo+"/" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item'><a class='page-link' href='/search/?query="+titulo+"/" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     } else {
-        previusText = "<li class='page-item disabled'><a class='page-link' href='/search/?query="+titulo+"/" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item disabled'><a class='page-link' href='/search/?query="+titulo+"/" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     }
 
     if (page + 1 < totalPages) {
-        nextText = "<li class='page-item'><a class='page-link' href='/search/?query="+titulo+"/" + parseInt(pagina+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item'><a class='page-link' href='/search/?query="+titulo+"/" + parseInt(pagina+1) + "'>Siguiente</a></li>";
     } else {
-        nextText = "<li class='page-item disabled'><a class='page-link' href='/search/?query="+titulo+"/" + parseInt(pagina+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item disabled'><a class='page-link' href='/search/?query="+titulo+"/" + parseInt(pagina+1) + "'>Siguiente</a></li>";
     }   
     console.log("textLeft page:" +(page-2));
     if((page - 2) > 0){
@@ -121,15 +121,15 @@ async function getPaginationTopMoviesNoSearch(page, totalPages) {
     console.log("Total de paginas:" + totalPages);
 
     if (page - 1 > 0) {
-        previusText = "<li class='page-item'><a class='page-link' href='/search/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item'><a class='page-link' href='/search/?page=" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     } else {
-        previusText = "<li class='page-item disabled'><a class='page-link' href='/search/?page=" + (page - 1) + "' tabindex='-1'>Previous</a></li>";
+        previusText = "<li class='page-item disabled'><a class='page-link' href='/search/?page=" + (page - 1) + "' tabindex='-1'>Anterior</a></li>";
     }
 
     if (page + 1 < totalPages) {
-        nextText = "<li class='page-item'><a class='page-link' href='/search/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item'><a class='page-link' href='/search/?page=" + (page+1) + "'>Siguiente</a></li>";
     } else {
-        nextText = "<li class='page-item disabled'><a class='page-link' href='/search/?page=" + (page+1) + "'>Next</a></li>";
+        nextText = "<li class='page-item disabled'><a class='page-link' href='/search/?page=" + (page+1) + "'>Siguiente</a></li>";
     }   
     console.log("textLeft page:" +(page-2));
     if((page - 2) > 0){
